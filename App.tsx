@@ -1,15 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Philosophy from './components/Philosophy';
-import Process from './components/Process';
-import Services from './components/Services';
-import TechStack from './components/TechStack';
-import WorkflowExamples from './components/WorkflowExamples';
-import Testimonials from './components/Testimonials';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import Philosophy from './components/Philosophy.tsx';
+import Process from './components/Process.tsx';
+import Services from './components/Services.tsx';
+import TechStack from './components/TechStack.tsx';
+import WorkflowExamples from './components/WorkflowExamples.tsx';
+import Testimonials from './components/Testimonials.tsx';
+import ContactForm from './components/ContactForm.tsx';
+import Footer from './components/Footer.tsx';
 
 export type View = 'home' | 'philosophy' | 'process' | 'services' | 'results' | 'consultation';
 
