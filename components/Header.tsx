@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled, onNavigate, currentView }) =>
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || currentView !== 'home' 
-          ? 'bg-cyber-navy/80 backdrop-blur-2xl border-b border-indigo-500/10 py-3' 
+          ? 'bg-cyber-navy/80 backdrop-blur-2xl border-b border-indigo-500/10 py-2' 
           : 'bg-transparent py-6'
       }`}
     >
@@ -30,7 +30,14 @@ const Header: React.FC<HeaderProps> = ({ scrolled, onNavigate, currentView }) =>
           onClick={() => onNavigate('home')} 
           className="hover:opacity-80 transition-all hover:scale-[1.02]"
         >
-          <Logo size="sm" />
+          {/* Smaller, side-by-side logo for header */}
+          <div className="flex items-center gap-3">
+             <Logo size="sm" showText={false} />
+             <div className="flex flex-col leading-none">
+                <span className="text-lg font-black tracking-widest text-white uppercase font-heading">Ronohills</span>
+                <span className="text-[7px] uppercase tracking-[0.4em] font-bold text-gray-500">AI Automation</span>
+             </div>
+          </div>
         </button>
         
         <nav className="hidden md:flex items-center gap-10">
@@ -51,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled, onNavigate, currentView }) =>
           onClick={() => onNavigate('consultation')}
           className="bg-indigo-600 text-white px-7 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-indigo-500 transition-all active:scale-95 shadow-[0_0_20px_rgba(99,102,241,0.3)]"
         >
-          Deploy Audit
+          Free Audit
         </button>
       </div>
     </header>
