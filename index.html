@@ -4,13 +4,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ronohills | Intelligence on Autopilot</title>
+    <title>RONOHILLS | AI Automation Agency</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              cyber: {
+                navy: '#030712',
+                indigo: '#6366f1',
+                purple: '#8b5cf6',
+                cyan: '#2dd4bf',
+                teal: '#0d9488'
+              }
+            },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               heading: ['Outfit', 'sans-serif'],
@@ -21,7 +30,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
       :root {
         color-scheme: dark;
@@ -29,25 +38,66 @@
       body {
         margin: 0;
         background-color: #030712;
+        /* Atmospheric fade background */
+        background-image: 
+          radial-gradient(circle at 50% -20%, #1e1b4b 0%, transparent 50%),
+          radial-gradient(circle at 0% 100%, #064e3b 0%, transparent 30%),
+          radial-gradient(circle at 100% 100%, #1e1b4b 0%, transparent 30%);
+        background-attachment: fixed;
         color: #f9fafb;
         overflow-x: hidden;
       }
       #root {
         min-height: 100vh;
       }
-      .gradient-text {
-        background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+      .cyber-gradient-text {
+        background: linear-gradient(135deg, #6366f1 0%, #2dd4bf 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
       .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(10, 11, 30, 0.4);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(99, 102, 241, 0.1);
       }
-      .hover-glass:hover {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+      .circuit-border {
+        position: relative;
+      }
+      .circuit-border::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #6366f1, #2dd4bf, transparent);
+      }
+      .mountain-waves {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        opacity: 0.25;
+        background: linear-gradient(to top, #030712 0%, transparent 100%),
+                    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCI+PHBhdGggZmlsbD0iIzYzNjZmMSIgZmlsbC1vcGFjaXR5PSIxIiBkPSJNMCAxOTJMMjQuMCAxOTcuM0M0OC4wIDIwMyA5Ni4wIDIxMyAxNDQuMCAyMjRDMTkyLjAgMjM1IDI0MC4wIDI0NSAyODguMCAyMzRDMzM2LjAgMjI0IDM4NC4wIDE5MiA0MzIuMCAxNjBDNDgwLjAgMTI4IDUyOC4wIDk2IDU3Ni4wIDk2QzYyNC4wIDk2IDY3Mi4wIDEyOCA3MjAuMCAxNDRDNzY4LjAgMTYwIDgxNi4wIDE2MCA4NjQuMCAxNjBDOTEyLjAgMTYwIDk2MC4wIDE2MCAxMDA4LjAgMTU0LjdDMTA1Ni4wIDE0OSAxMTA0LjAgMTM5IDExNTIuMCAxNDRDMTIwMC4wIDE0OSAxMjQ4LjAgMTcwIDEyOTYuMCAxODFDMTM0NC4wIDE5MiAxMzkyLjAgMTkyIDE0MTYuMCAxOTJMMTQ0MC4wIDE5MkwxNDQwIDMyMEwwIDMyMFoiPjwvcGF0aD48L3N2Zz4=');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: hue-rotate(220deg) contrast(1.1) blur(2px);
+        mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      }
+      /* Soft film grain to soften gradients */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 9999;
       }
     </style>
     <script type="importmap">
@@ -64,11 +114,11 @@
   </head>
   <body>
     <div id="root">
-      <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #030712; color: #4f46e5; font-family: sans-serif;">
+      <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #030712; color: #6366f1; font-family: sans-serif;">
         <div style="text-align: center;">
-          <div style="width: 40px; height: 40px; border: 3px solid rgba(79, 70, 229, 0.1); border-top-color: #4f46e5; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;"></div>
+          <div style="width: 40px; height: 40px; border: 3px solid rgba(99, 102, 241, 0.1); border-top-color: #6366f1; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;"></div>
           <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
-          <span style="font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: 12px;">Initializing Ronohills AI...</span>
+          <span style="font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; font-size: 10px;">RONOHILLS SYSTEMS INITIALIZING...</span>
         </div>
       </div>
     </div>
